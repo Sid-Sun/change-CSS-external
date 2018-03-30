@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Changing Styles</title>
+    <style>
+    body {
+      background-color: #212121;
+    }
+    h1, h2, h3, h4, a {
+      color: #FAFAFA;
+    }
+    </style>
+    <style>
+    body {
+      background-color: #6666ff;
+    }
+    h1, h2, h3, h4, a {
+      color: #fff;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to Changing-Styles</h1>
+    <h2>Here You'll learn how-to change stylesheets on the fly<br> Flying is good, right? I don't know about you but I like to fly</h2>
+    <h3>These are just random texts I'm writing as I'm making the page to showcase the method of changing styles.</h3>
+    <h4>UI isn't particularly a focus of the page so ignore kthxbye By the by, you may toggle the checkbox below text to switch style!</h4>
+    <a onclick="changestyle()">Change CSS</a>
+    <h3>Nice, Right? however there's a lil thingy: CSS has to be inline in order for this to work.. I suggest you commonize CSS then make different inline CSS</h3>
+    <h2>By: <a href="https://GitHub.com/Sid-sun" target="_blank">@Sid-Sun</a></h2>
+  </body>
+
+  <footer>
+    <script>
+
+    function changestyle() {
+      if(document.styleSheets[1].disabled == true){
+        reStyle (1);
+      }else {
+        reStyle (0);
+      }
+    }
+
+    function noStyles() {
+        document.styleSheets[1].disabled = true;
+        document.styleSheets[0].disabled = true;
+    }
+
+    function reStyle(n) {
+        noStyles()
+        document.styleSheets[n].disabled = false;
+    }
+
+    reStyle(0);
+    </script>
+</html>
