@@ -4,22 +4,7 @@
   <head>
     <meta charset="utf-8"/>
     <title>Changing CSS</title>
-    <style>
-    body {
-      background-color: #212121;
-    }
-    h1, h2, h3, h4, a {
-      color: #FAFAFA;
-    }
-    </style>
-    <style>
-    body {
-      background-color: #6666ff;
-    }
-    h1, h2, h3, h4, a {
-      color: #fff;
-    }
-    </style>
+    <link rel="styleSheet" type="text/css" id="theme" href="style1.css">
   </head>
 
   <body>
@@ -27,32 +12,23 @@
     <h2>Here You'll learn how-to change stylesheets on the fly<br> Flying is good, right? I don't know about you but I like to fly</h2>
     <h3>These are just random texts I'm writing as I'm making the page to showcase the method of changing styles.</h3>
     <h4>UI isn't particularly a focus of the page so ignore kthxbye By the by, you may tap the text below to switch style! It's Dynamic now, too!</h4>
-    <a onclick="changestyle()">Change CSS</a>
-    <h3>Nice, Right? however there's a lil thingy: CSS has to be inline in order for this to work.. I suggest you commonize CSS then make different inline CSS</h3>
+    <a onclick="changeTheme()">Change External CSS</a>
     <h2>By: <a href="https://GitHub.com/Sid-sun" target="_blank">@Sid-Sun</a></h2>
   </body>
 
   <footer>
     <script>
 
-    function changestyle() {
-      if(document.styleSheets[1].disabled == true){
-        reStyle (1);
-      }else {
-        reStyle (0);
+    var themeName = "style1";
+
+    function changeTheme(){
+      if (themeName == "style1"){
+          themeName = "style2";
+        } else {
+          themeName = "style1";
+        }
+      document.getElementById("theme").href = themeName + ".css";
       }
-    }
 
-    function noStyles() {
-        document.styleSheets[1].disabled = true;
-        document.styleSheets[0].disabled = true;
-    }
-
-    function reStyle(n) {
-        noStyles()
-        document.styleSheets[n].disabled = false;
-    }
-
-    reStyle(0);
     </script>
 </html>
